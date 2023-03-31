@@ -3774,7 +3774,14 @@
                 slidesPerView: 1,
                 spaceBetween: 50,
                 autoHeight: true,
-                speed: 2e3,
+                speed: 1e3,
+                touchEventsTarget: "wrapper",
+                touchRatio: 2,
+                grabCursor: true,
+                allowTouchMove: true,
+                autoplay: {
+                    delay: 4e3
+                },
                 pagination: {
                     el: ".swiper-pagination",
                     type: "bullets",
@@ -3786,12 +3793,19 @@
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
-                speed: 2e3,
+                speed: 1e3,
                 spaceBetween: 100,
+                touchEventsTarget: "wrapper",
+                touchRatio: 2,
+                grabCursor: true,
+                allowTouchMove: true,
                 pagination: {
                     el: ".swiper-pagination",
                     type: "bullets",
                     clickable: true
+                },
+                autoplay: {
+                    delay: 4e3
                 },
                 breakpoints: {
                     380: {},
@@ -3805,11 +3819,18 @@
                 slidesPerView: 1,
                 spaceBetween: 110,
                 autoHeight: true,
-                speed: 2e3,
+                speed: 1e3,
+                touchEventsTarget: "wrapper",
+                touchRatio: 2,
+                grabCursor: true,
+                allowTouchMove: true,
                 pagination: {
                     el: ".swiper-pagination",
                     type: "bullets",
                     clickable: true
+                },
+                autoplay: {
+                    delay: 4e3
                 }
             });
             new core(".Swiper-4", {
@@ -3818,11 +3839,18 @@
                 observeParents: true,
                 slidesPerView: 1,
                 autoHeight: true,
-                speed: 2e3,
+                speed: 1e3,
+                touchEventsTarget: "wrapper",
+                touchRatio: 2,
+                grabCursor: true,
+                allowTouchMove: true,
                 pagination: {
                     el: ".swiper-pagination",
                     type: "bullets",
                     clickable: true
+                },
+                autoplay: {
+                    delay: 4e3
                 }
             });
         }
