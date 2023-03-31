@@ -1029,8 +1029,16 @@ body::after {
   margin-right: 3.125rem;
 }
 
-.footer-bottom__map-2 {
-  display: none;
+.footer-bottom__map {
+  width: 100%;
+  max-width: 322px;
+}
+
+.footer-bottom__map img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 425px;
 }
 
 .item-footer {
@@ -1526,7 +1534,20 @@ body::after {
   background-color: #F7F5F3;
   position: relative;
   z-index: 1;
-  height: 1140px;
+}
+
+.benefits-page__bg {
+  text-align: center;
+  z-index: 1;
+  background-image: url("../img/dich.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.benefits-page__container {
+  position: relative;
+  z-index: 5;
 }
 
 .benefits-page__title {
@@ -1537,13 +1558,12 @@ body::after {
   letter-spacing: -0.02em;
   text-transform: capitalize;
   color: #303030;
-  margin-bottom: 6.25rem;
 }
 
 .benefits-page .item-benefits-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
+  -webkit-transform: translate(18%, 185px);
+      -ms-transform: translate(18%, 185px);
+          transform: translate(18%, 185px);
 }
 
 .why-riskVille-page {
@@ -2217,9 +2237,9 @@ body::after {
 
 .contacts-page__bg._watcher-view {
   opacity: 1;
-  -webkit-transform: translate(-230px, -109px);
-      -ms-transform: translate(-230px, -109px);
-          transform: translate(-230px, -109px);
+  -webkit-transform: translate(-230px, -100px);
+      -ms-transform: translate(-230px, -100px);
+          transform: translate(-230px, -100px);
 }
 
 .contacts-page__bg-2 {
@@ -3346,6 +3366,14 @@ button.swiper-pagination-bullet {
     padding-bottom: 6.25rem;
   }
 
+  .benefits-page__bg {
+    height: 50.5rem;
+  }
+
+  .benefits-page__title {
+    margin-bottom: 3.75rem;
+  }
+
   .why-riskVille-page {
     padding-top: 5rem;
   }
@@ -3461,6 +3489,16 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media (max-width: 1450px) and (max-width: 20em) {
+  .benefits-page__bg {
+    height: 0.0000000625rem;
+  }
+
+  .benefits-page__title {
+    margin-bottom: 0.0000000625rem;
+  }
+}
+
 @media (max-width: 1130px) {
   .main-news__items {
     -webkit-box-pack: center;
@@ -3563,12 +3601,26 @@ button.swiper-pagination-bullet {
     display: block;
   }
 
+  .benefits-page__bg {
+    background-image: url("../img/dich_md.svg");
+  }
+
   .why-riskVille-page__static {
     display: none;
   }
 
   .why-riskVille-page__agile {
     display: block;
+  }
+}
+
+@media (max-width: 1000px) and (max-width: 20em) {
+  .benefits-page__bg {
+    height: 22.5rem;
+  }
+
+  .benefits-page__title {
+    margin-bottom: 0.0000000625rem;
   }
 }
 
@@ -3784,11 +3836,7 @@ button.swiper-pagination-bullet {
   }
 
   .footer-bottom__map {
-    display: none;
-  }
-
-  .footer-bottom__map-2 {
-    display: block;
+    max-width: 100%;
   }
 
   .item-footer {
@@ -4100,6 +4148,22 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media (max-width: 580px) {
+  .benefits-page__bg {
+    background-image: url("../img/dich_sm.svg");
+  }
+}
+
+@media (max-width: 580px) and (max-width: 20em) {
+  .benefits-page__bg {
+    height: 37.5rem;
+  }
+
+  .benefits-page__title {
+    margin-bottom: 2.5rem;
+  }
+}
+
 @media (max-width: 500px) {
   .popup__content .popup-form__btn {
     width: 100%;
@@ -4149,10 +4213,6 @@ button.swiper-pagination-bullet {
     height: 2px;
     background: #FFFFFF;
     margin-bottom: 2.4375rem;
-  }
-
-  .footer-bottom__map-2 img {
-    width: 100%;
   }
 
   .item-footer {
@@ -4351,6 +4411,14 @@ button.swiper-pagination-bullet {
 
   .benefits-page {
     padding-bottom: 3.75rem;
+  }
+
+  .benefits-page__bg {
+    height: 0.0000000625rem;
+  }
+
+  .benefits-page__title {
+    margin-bottom: 0.0000000625rem;
   }
 
   .why-riskVille-page {
@@ -4895,6 +4963,30 @@ button.swiper-pagination-bullet {
     }
 }
 
+@supports (height: clamp( 0.0000000625rem , -19.9506171968rem  +  99.7530862963vw , 50.5rem )) {
+    .benefits-page__bg {
+      height: clamp( 0.0000000625rem , -19.9506171968rem  +  99.7530862963vw , 50.5rem );
+    }
+}
+
+@supports not (height: clamp( 0.0000000625rem , -19.9506171968rem  +  99.7530862963vw , 50.5rem )) {
+    .benefits-page__bg {
+      height: calc(0.0000000625rem + 50.4999999375 * (100vw - 20rem) / 50.625);
+    }
+}
+
+@supports (margin-bottom: clamp( 0.0000000625rem , -1.4814813943rem  +  7.407407284vw , 3.75rem )) {
+    .benefits-page__title {
+      margin-bottom: clamp( 0.0000000625rem , -1.4814813943rem  +  7.407407284vw , 3.75rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 0.0000000625rem , -1.4814813943rem  +  7.407407284vw , 3.75rem )) {
+    .benefits-page__title {
+      margin-bottom: calc(0.0000000625rem + 3.7499999375 * (100vw - 20rem) / 50.625);
+    }
+}
+
 @supports (padding-top: clamp( 3.125rem , 2.3842592593rem  +  3.7037037037vw , 5rem )) {
     .why-riskVille-page {
       padding-top: clamp( 3.125rem , 2.3842592593rem  +  3.7037037037vw , 5rem );
@@ -5166,6 +5258,114 @@ button.swiper-pagination-bullet {
 @supports not (margin-bottom: clamp( 0.625rem , 0.3780864198rem  +  1.2345679012vw , 1.25rem )) {
     .body-page__item:not(:last-child) {
       margin-bottom: calc(0.625rem + 0.625 * (100vw - 20rem) / 50.625);
+    }
+}
+}
+
+@media (max-width: 1450px) and (min-width: 70.625em) {
+  .benefits-page__bg {
+    height: 45rem;
+  }
+
+  .benefits-page__title {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 1450px) and (min-width: 20em) and (max-width: 70.625em) {
+@supports (height: clamp( 0.0000000625rem , -17.7777776906rem  +  88.8888887654vw , 45rem )) {
+    .benefits-page__bg {
+      height: clamp( 0.0000000625rem , -17.7777776906rem  +  88.8888887654vw , 45rem );
+    }
+}
+
+@supports not (height: clamp( 0.0000000625rem , -17.7777776906rem  +  88.8888887654vw , 45rem )) {
+    .benefits-page__bg {
+      height: calc(0.0000000625rem + 44.9999999375 * (100vw - 20rem) / 50.625);
+    }
+}
+
+@supports (margin-bottom: clamp( 0.0000000625rem , -0.9876542338rem  +  4.9382714815vw , 2.5rem )) {
+    .benefits-page__title {
+      margin-bottom: clamp( 0.0000000625rem , -0.9876542338rem  +  4.9382714815vw , 2.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 0.0000000625rem , -0.9876542338rem  +  4.9382714815vw , 2.5rem )) {
+    .benefits-page__title {
+      margin-bottom: calc(0.0000000625rem + 2.4999999375 * (100vw - 20rem) / 50.625);
+    }
+}
+}
+
+@media (max-width: 1000px) and (min-width: 70.625em) {
+  .benefits-page__bg {
+    height: 42.9375rem;
+  }
+
+  .benefits-page__title {
+    margin-bottom: 3.75rem;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 20em) and (max-width: 70.625em) {
+@supports (height: clamp( 22.5rem , 14.4259259259rem  +  40.3703703704vw , 42.9375rem )) {
+    .benefits-page__bg {
+      height: clamp( 22.5rem , 14.4259259259rem  +  40.3703703704vw , 42.9375rem );
+    }
+}
+
+@supports not (height: clamp( 22.5rem , 14.4259259259rem  +  40.3703703704vw , 42.9375rem )) {
+    .benefits-page__bg {
+      height: calc(22.5rem + 20.4375 * (100vw - 20rem) / 50.625);
+    }
+}
+
+@supports (margin-bottom: clamp( 0.0000000625rem , -1.4814813943rem  +  7.407407284vw , 3.75rem )) {
+    .benefits-page__title {
+      margin-bottom: clamp( 0.0000000625rem , -1.4814813943rem  +  7.407407284vw , 3.75rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 0.0000000625rem , -1.4814813943rem  +  7.407407284vw , 3.75rem )) {
+    .benefits-page__title {
+      margin-bottom: calc(0.0000000625rem + 3.7499999375 * (100vw - 20rem) / 50.625);
+    }
+}
+}
+
+@media (max-width: 580px) and (min-width: 70.625em) {
+  .benefits-page__bg {
+    height: 125rem;
+  }
+
+  .benefits-page__title {
+    margin-bottom: 3.75rem;
+  }
+}
+
+@media (max-width: 580px) and (min-width: 20em) and (max-width: 70.625em) {
+@supports (height: clamp( 37.5rem , 2.9320987654rem  +  172.8395061728vw , 125rem )) {
+    .benefits-page__bg {
+      height: clamp( 37.5rem , 2.9320987654rem  +  172.8395061728vw , 125rem );
+    }
+}
+
+@supports not (height: clamp( 37.5rem , 2.9320987654rem  +  172.8395061728vw , 125rem )) {
+    .benefits-page__bg {
+      height: calc(37.5rem + 87.5 * (100vw - 20rem) / 50.625);
+    }
+}
+
+@supports (margin-bottom: clamp( 2.5rem , 2.0061728395rem  +  2.4691358025vw , 3.75rem )) {
+    .benefits-page__title {
+      margin-bottom: clamp( 2.5rem , 2.0061728395rem  +  2.4691358025vw , 3.75rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.5rem , 2.0061728395rem  +  2.4691358025vw , 3.75rem )) {
+    .benefits-page__title {
+      margin-bottom: calc(2.5rem + 1.25 * (100vw - 20rem) / 50.625);
     }
 }
 }

@@ -3966,7 +3966,12 @@
         }
         if (getHash()) {
             let goToHash;
-            if (document.querySelector(`#${getHash()}`)) goToHash = `#${getHash()}`; else if (document.querySelector(`.${getHash()}`)) goToHash = `.${getHash()}`;
+            if (document.querySelector(`#${getHash()}`)) {
+                goToHash = `#${getHash()}`;
+                var url = window.location.href;
+                var cleanUrl = url.replace(/#.*$/, "");
+                window.history.replaceState(null, null, cleanUrl);
+            } else if (document.querySelector(`.${getHash()}`)) goToHash = `.${getHash()}`;
             goToHash ? gotoblock_gotoBlock(goToHash, true, 500, 20) : null;
         }
     }
