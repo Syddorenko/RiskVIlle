@@ -5061,6 +5061,10 @@ button.swiper-pagination-bullet {
     max-width: 270px;
   }
 
+  .header-bottom .body__info-text {
+    margin-bottom: 20px;
+  }
+
   .page-news__items .item-news {
     width: 100%;
   }
@@ -5152,7 +5156,7 @@ button.swiper-pagination-bullet {
   }
 
   .header-bottom {
-    padding-top: 7.5rem;
+    padding-top: 6.25rem;
   }
 
   .header-bottom {
@@ -5409,15 +5413,15 @@ button.swiper-pagination-bullet {
     }
 }
 
-@supports (padding-top: clamp( 7.5rem , 6.4361702128rem  +  5.3191489362vw , 10.625rem )) {
+@supports (padding-top: clamp( 6.25rem , 4.7606382979rem  +  7.4468085106vw , 10.625rem )) {
     .header-bottom {
-      padding-top: clamp( 7.5rem , 6.4361702128rem  +  5.3191489362vw , 10.625rem );
+      padding-top: clamp( 6.25rem , 4.7606382979rem  +  7.4468085106vw , 10.625rem );
     }
 }
 
-@supports not (padding-top: clamp( 7.5rem , 6.4361702128rem  +  5.3191489362vw , 10.625rem )) {
+@supports not (padding-top: clamp( 6.25rem , 4.7606382979rem  +  7.4468085106vw , 10.625rem )) {
     .header-bottom {
-      padding-top: calc(7.5rem + 3.125 * (100vw - 20rem) / 58.75);
+      padding-top: calc(6.25rem + 4.375 * (100vw - 20rem) / 58.75);
     }
 }
 
