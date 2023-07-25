@@ -6,1126 +6,656 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230331173358">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230725085331">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css?_v=20230725085331" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
-	<div class="wrapper">
+<body class="popup-show">
+	<div id="loader">
+		<div class="loader">
+			<img src="img/logo.svg" alt="">
+		</div>
+	</div>
+	<div class="wrapper" id="content">
 		<div class="header__full-screen">
+			<div class="header__full-bg"></div>
 			<header class="header">
 				<div class="header__container">
-					<div class="header-top">
-						<div class="header-top__logo">
-							<a href=""><img src="img/logo-img.svg" alt="logo" data-goto-header data-goto=".header__full-screen"></a>
-						</div>
-						<div class="header-top__menu menu">
-							<nav class="menu__body">
-								<ul class="menu__list">
-									<div class="header-top__logo2">
-										<a href=""><img src="img/logo-img.svg" alt="logo" data-goto-header data-goto=".header__full-screen"></a>
-									</div>
-									<li class="menu__item">
-										<a data-goto-header data-goto=".about-page" href="#about-page" class="menu__link">
-											About
-										</a>
-									</li>
-									<li class="menu__item">
-										<a data-goto-header data-goto=".problem-page" href="#problem-page" class="menu__link">
-											Problem
-										</a>
-									</li>
-									<li class="menu__item">
-										<a data-goto-header data-goto=".features-page" href="features-page" class="menu__link">
-											Solution
-										</a>
-									</li>
-									<li class="menu__item">
-										<a data-goto-header data-goto=".benefits-page" href="#benefits-page" class="menu__link">
-											Benefits
-										</a>
-									</li>
-									<li class="menu__item">
-										<a data-goto-header data-goto=".why-riskVille-page" href="#why-riskVille-page" class="menu__link">
-											Testimonials
-										</a>
-									</li>
-
-									<li class="menu__item">
-										<a data-goto-header data-goto=".contacts-page" href="#contacts-page" class="menu__link">
-											Contacts
-										</a>
-									</li>
-									<li class="menu__item">
-										<a href="news.html" class="menu__link">News</a>
-									</li>
-									<button type="button" class="menu__icon-second icon-menu-second"><span></span></button>
-								</ul>
-							</nav>
-						</div>
-						<a class="menu__button" data-goto-header data-goto=".contacts-page" href="#contacts-page">Schedule a
-							Demo</a>
-						<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<div class="header__logo">
+						<a href="" data-goto-header data-goto=".header__full-screen">
+							<img src="img/logo.svg" alt="logo">
+						</a>
 					</div>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a data-goto-header data-goto=".about" href="#about" class="menu__link">
+										About
+									</a>
+								</li>
+								<li class="menu__item">
+									<a data-goto-header data-goto=".features" href="features" class="menu__link">
+										Solution
+									</a>
+								</li>
+								<li class="menu__item">
+									<a data-goto-header data-goto=".benefits" href="#benefits" class="menu__link">
+										Benefits
+									</a>
+								</li>
+								<li class="menu__item">
+									<a data-goto-header data-goto=".clients" href="#why-riskVille" class="menu__link">
+										Testimonials
+									</a>
+								</li>
+								<li class="menu__item">
+									<a data-goto-header data-goto=".contacts" href="#contacts" class="menu__link">
+										Contacts
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="news.html" class="menu__link">News</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<a class="menu__button" data-goto-header data-goto=".contacts" href="#contacts">
+						Schedule a Demo
+					</a>
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
 				</div>
 			</header>
 			<section class="header-bottom">
 				<div class="header-bottom__container">
-					<div class="header-bottom__body body__botton">
-						<h1 class="body__botton-title">
-							Cloud Solution for Risk
-							and Insurance Management
-						</h1>
-						<p class="body__botton-subtitle">
-							RiskVille can help you automate core routine tasks within policy, claims and risk management
-						</p>
-						<a data-goto-header data-goto=".contacts-page" href="#contacts-page" class="body__botton-btn">Schedule a
-							Demo</a>
-					</div>
-				</div>
-				<div class="header-bottom__bg-line">
-					<img src="img/bg-line.png" alt="" width="100%">
-				</div>
-				<div class="header-bottom__bg-bridge">
-					<img src="img/bg-bringe.png" alt="" width="100%">
-				</div>
-			</section>
-		</div>
-		<div id="popup" aria-hidden="true" class="popup">
-			<div class="popup__wrapper">
-				<div class="popup__content">
-					<div class="popup__top">
-						<div class="popup__title">
-							Get Case Study
-						</div>
-						<button data-close type="button" class="popup__close"><span></span></button>
-					</div>
-					<form action="#" class="popup-form">
-						<div class="popup-form__subtitle">
-							<p>
-								Please fill the form below and will send the case study directly on your email
-							</p>
-						</div>
-						<div class="form-group">
-							<input type="text" id="name" class="form-input">
-							<label for="name" class="form-label">Name</label>
-							<div class="form-input-underline"></div>
-						</div>
-						<div class="form-group">
-							<input type="email" id="email" class="form-input" required data-validate data-required="email" data-required="email" data-error="Enter the correct Email">
-							<label for="email" class="form-label">Email</label>
-							<div class="form-input-underline"></div>
-						</div>
-						<div class="popup-form__button">
-							<button class="popup-form__btn">Get My Copy</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<main class="page">
-			<section class="about-page" id="about-page">
-				<div class="about-page__container">
-					<div class="about-page__body  body-page">
-						<div class="body-page__items">
-							<div class="body-page__item item-page" data-watch-threshold="0.5" data-watch data-watch-once>
-								<div class="item-page__title">
-									<span>01.</span>
-									<h3>Automate Operations</h3>
-								</div>
-								<div class="item-page__subtitle">
-									<p>
-										We understand your business and know how important it is to see not only the
-										whole picture of the business results but also to carry out carefully and
-										accurately daily operations. Free up your people from doing monkey job and let
-										RiskVille automate their routine.
-									</p>
-								</div>
-							</div>
-							<div class="body-page__item item-page" data-watch-threshold="0.5" data-watch data-watch-once>
-								<div class="item-page__title">
-									<span>02.</span>
-									<h3>Get More <br> Happy Clients</h3>
-								</div>
-								<div class="item-page__subtitle">
-									<p>
-										Your clients are like you and us. They expect to be served quickly and
-										professionally. You can exceed their expectations by providing access to
-										policies and claims via a simple online interface or friendly remind them about
-										renewals
-									</p>
-								</div>
-							</div>
-							<div class="body-page__item item-page" data-watch-threshold="0.5" data-watch data-watch-once>
-								<div class="item-page__title">
-									<span>03.</span>
-									<h3>Be <br> Compliant</h3>
-								</div>
-								<div class="item-page__subtitle">
-									<p>
-										We all have audits and want to meet auditors with the smile feeling secure and
-										compliant. Improve compliance by making audit processes more straightforward.
-										RiskVille is GDPR compliant and hosted on the safe and secure Microsoft Azure
-										platform ensures safety and security for your data and processes.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="problem-page" id="problem-page">
-				<div class="problem-page__container">
-					<div class="problem-page__body problem-body">
-						<div class="problem-body body-swipp">
-							<div class="body-swipp__slider swiper">
-								<div class="body-swipp__wrapper swiper-wrapper">
-									<div class="body-swipp__slide swiper-slide">
-										<div class="swiper-slide__img">
-											<img src="img/bg-problem.png" alt="" width="100%">
-										</div>
-									</div>
-									<div class="body-swipp__slide swiper-slide">
-										<div class="swiper-slide__img">
-											<img src="img/bg-problem.png" alt="" width="100%">
-										</div>
-									</div>
-									<div class="body-swipp__slide swiper-slide">
-										<div class="swiper-slide__img">
-											<img src="img/bg-problem.png" alt="" width="100%">
-										</div>
-									</div>
-								</div>
-								<!-- Если нужна пагинация -->
-								<div class="swiper-pagination"></div>
-							</div>
-							<div class="problem-body__info info-body">
-								<div class="info-body__title">
-									<h3>
-										RiskVille is a cloud based solution designed for any type of insurance business.
-									</h3>
-								</div>
-								<div class="info-body__subtitle">
-									<p>
-										Manage your day-to-day operations including customer relationships, claims,
-										policies and risks in one system
-									</p>
-								</div>
-								<div class="info-body__button">
-									<a data-goto-header data-goto=".contacts-page" href="#contacts-page" class="info-body__btn">Schedule a Demo</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="features-page" id="features-page">
-				<div class="features-page__container">
-					<div class="features-page__body body-features">
-						<div class="body-features__title">
-							<h3>
-								RiskVille Features
+					<div class="header-bottom__body">
+						<div class="body__info">
+							<h3 class="body__info-title">
+								<span>Cloud Solution</span>
+								for Risk and Insurance Management
 							</h3>
+							<p class="body__info-text">
+								RiskVille can help you automate core routine tasks within policy, claims and risk
+								management.
+								RiskVille is low cost solution, easy to adapt to any business line, and quick to implement.
+								Be
+								safe and compliant in the cloud with MS Azure and RiskVille.
+							</p>
+							<a class="body__info-button" data-goto-header data-goto=".contacts" href="#contacts">
+								Schedule a Demo
+							</a>
 						</div>
-						<div class="features-page__static">
-							<div class="features-page__row first" data-watch-threshold="0.5" data-watch data-watch-once>
-								<div class="features-page__items">
-									<div class="features-page__item item-features">
-										<div class="item-features__img">
-											<img src="img/icon-features/features-icon-1.png" alt="">
-										</div>
-										<div class="item-features__text">
-											<div class="item-features__title">
-												<h3>
-													360 Customer View
-												</h3>
-											</div>
-											<div class="item-features__subtitle">
-												<p>
-													Create unified profiles that keep all the customer data, including
-													demographics, contacts, documents, and policies. Get a holistic view
-													of historical and behavioral data like email interactions.
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="features-page__item item-features">
-										<div class="item-features__img">
-											<img src="img/icon-features/features-icon-2.png" alt="">
-										</div>
-										<div class="item-features__text">
-											<div class="item-features__title">
-												<h3>
-													Customer Portal
-												</h3>
-											</div>
-											<div class="item-features__subtitle">
-												<p>
-													Utilize RiskVille as a portal for sharing data and documents with
-													your clients. RiskVille Customer Portal allows policyholders to edit
-													contact information, view details of their quotes and policies, add
-													assets, submit and track claims.
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
+						<div class="body__cloud">
+							<picture><source srcset="img/cloud.webp" type="image/webp"><img src="img/cloud.png" alt="" width="100%"></picture>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div data-prlx-mouse data-prlx-a="20" data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr class="header__dots dots1"></div>
+			<div class="header__dots dots2"></div>
+			<div class="header__dots dots3"></div>
+			<a class="header__mouse mouse" data-goto-header data-goto=".about" href="#about"></a>
+		</div>
+
+
+		<main class="page">
+			<section class="about" id="about">
+				<div class="about__container">
+					<div class="about__items">
+						<div class="about__item item">
+							<div data-watch data-watch-once data-watch-threshold="0.2" class="item__first-column">
+								<span>01</span>
 							</div>
-							<div class="features-page__row second" data-watch-threshold="0.5" data-watch data-watch-once>
-								<div class="features-page__items">
-									<div class="features-page__item item-features">
-										<div class="item-features__img">
-											<img src="img/icon-features/features-icon-3.png" alt="">
-										</div>
-										<div class="item-features__text">
-											<div class="item-features__title">
-												<h3>
-													Rating, Quoting and Billing
-												</h3>
-											</div>
-											<div class="item-features__subtitle">
-												<p>
-													Conduct rate analysis and pricing for any insurance product,
-													standardize quotes, calculate premiums, and taxes. Manage
-													underwriting rules by following information on possible risks and
-													threats.
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="features-page__item item-features">
-										<div class="item-features__img">
-											<img src="img/icon-features/features-icon-4.png" alt="">
-										</div>
-										<div class="item-features__text">
-											<div class="item-features__title">
-												<h3>
-													Policy Management
-												</h3>
-											</div>
-											<div class="item-features__subtitle">
-												<p>
-													Get standard policy templates that can be issued upon binding.
-													Create policies with different risk coverage and compliance, check
-													policies, monitor renewals, prepare reports, renew policies
-													automatically.
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="features-page__row third" data-watch-threshold="0.5" data-watch data-watch-once>
-								<div class="features-page__items">
-									<div class="features-page__item item-features">
-										<div class="item-features__img">
-											<img src="img/icon-features/features-icon-5.png" alt="">
-										</div>
-										<div class="item-features__text">
-											<div class="item-features__title">
-												<h3>
-													Certificates Issuance
-												</h3>
-											</div>
-											<div class="item-features__subtitle">
-												<p>
-													Upon the holder’s request, provide quick verification of the policy
-													existence by allowing a holder to get a certificate of insurance
-													(COI) online. The certificate can be printed directly from
-													RiskVille.
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="features-page__item item-features">
-										<div class="item-features__img">
-											<img src="img/icon-features/features-icon-6.png" alt="">
-										</div>
-										<div class="item-features__text">
-											<div class="item-features__title">
-												<h3>
-													Risk Management
-												</h3>
-											</div>
-											<div class="item-features__subtitle">
-												<p>
-													Use a comprehensive set of tools for risk management, including risk
-													monitoring, identification, assessment, and reporting. Calculate
-													risks for all types of assets and allocate the relevant premiums.
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="features-page__last-child" data-watch-threshold="0.5" data-watch data-watch-once>
-								<div class="features-page__item item-features">
-									<div class="item-features__img">
-										<img src="img/icon-features/features-icon-3.png" alt="">
-									</div>
-									<div class="item-features__text">
-										<div class="item-features__title">
-											<h3>
-												Claims Management
-											</h3>
-										</div>
-										<div class="item-features__subtitle">
-											<p>
-												All customers have access to report claims online. Report
-												forms can be customized according to your specific needs.
-												Get notifications about incoming claims to always be on the
-												same page with customers.
-											</p>
-										</div>
-									</div>
-								</div>
+							<div data-watch data-watch-once data-watch-threshold="0.2" class="item__second-column">
+								<h3>Automate Operations</h3>
+								<p>
+									Many time-consuming routines like insurance renewals, billing, reminders, reporting and
+									more can be automated in RiskVille. This maximizes your time and allows you to focus
+									more on advising and building stronger relationships with your clients.
+								</p>
 							</div>
 						</div>
-						<div class="features-page__agile agli-features">
-							<!-- Оболочка слайдера -->
-							<div class="agli-features__slider Swiper-3">
-								<!-- Двигающееся часть слайдера -->
-								<div class="agli-features__wrapper swiper-wrapper">
-									<!-- Слайд -->
-									<div class="agli-features__slide swiper-slide">
-										<div class="swiper-slide__items">
-											<div class="swiper-slide__item-features item-slide-features">
-												<div class="item-slide-features__img">
-													<img src="img/icon-features/features-icon-1.png" alt="">
-												</div>
-												<div class="item-slide-features__text">
-													<div class="item-slide-features__title">
-														<h3>
-															360 Customer View
-														</h3>
-													</div>
-													<div class="item-slide-features__subtitle">
-														<p>
-															Create unified profiles that keep all the customer data,
-															including demographics, contacts, documents, and policies.
-															Get a
-															holistic view of historical and behavioral data like email
-															interactions.
-														</p>
-													</div>
-												</div>
-											</div>
-											<div class="swiper-slide__item-features item-slide-features">
-												<div class="item-slide-features__img">
-													<img src="img/icon-features/features-icon-3.png" alt="">
-												</div>
-												<div class="item-slide-features__text">
-													<div class="item-slide-features__title">
-														<h3>
-															Rating, Quoting and Billing
-														</h3>
-													</div>
-													<div class="item-slide-features__subtitle">
-														<p>
-															Conduct rate analysis and pricing for any insurance product,
-															standardize quotes, calculate premiums, and taxes. Manage
-															underwriting rules by following information on possible
-															risks
-															and threats.
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="agli-features__slide swiper-slide">
-										<div class="swiper-slide__items">
-											<div class="swiper-slide__item-features item-slide-features">
-												<div class="item-slide-features__img">
-													<img src="img/icon-features/features-icon-5.png" alt="">
-												</div>
-												<div class="item-slide-features__text">
-													<div class="item-slide-features__title">
-														<h3>
-															Certificates Issuance
-														</h3>
-													</div>
-													<div class="item-slide-features__subtitle">
-														<p>
-															Upon the holder’s request, provide quick verification of the
-															policy existence by allowing a holder to get a certificate
-															of
-															insurance (COI) online. The certificate can be printed
-															directly
-															from RiskVille.
-														</p>
-													</div>
-												</div>
-											</div>
-											<div class="swiper-slide__item-features item-slide-features">
-												<div class="item-slide-features__img">
-													<img src="img/icon-features/features-icon-2.png" alt="">
-												</div>
-												<div class="item-slide-features__text">
-													<div class="item-slide-features__title">
-														<h3>
-															Customer Portal
-														</h3>
-													</div>
-													<div class="item-slide-features__subtitle">
-														<p>
-															Utilize RiskVille as a portal for sharing data and documents
-															with your clients. RiskVille Customer Portal allows
-															policyholders to edit contact information, view details of
-															their
-															quotes and policies, add assets, submit and track claims.
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="agli-features__slide swiper-slide">
-										<div class="swiper-slide__items">
-											<div class="swiper-slide__item-features item-slide-features">
-												<div class="item-slide-features__img">
-													<img src="img/icon-features/features-icon-4.png" alt="">
-												</div>
-												<div class="item-slide-features__text">
-													<div class="item-slide-features__title">
-														<h3>
-															Policy Management
-														</h3>
-													</div>
-													<div class="item-slide-features__subtitle">
-														<p>
-															Get standard policy templates that can be issued upon
-															binding.
-															Create policies with different risk coverage and compliance,
-															check policies, monitor renewals, prepare reports, renew
-															policies automatically.
-														</p>
-													</div>
-												</div>
-											</div>
-											<div class="swiper-slide__item-features item-slide-features">
-												<div class="item-slide-features__img">
-													<img src="img/icon-features/features-icon-6.png" alt="">
-												</div>
-												<div class="item-slide-features__text">
-													<div class="item-slide-features__title">
-														<h3>
-															Risk Management
-														</h3>
-													</div>
-													<div class="item-slide-features__subtitle">
-														<p>
-															Use a comprehensive set of tools for risk management,
-															including
-															risk monitoring, identification, assessment, and reporting.
-															Calculate risks for all types of assets and allocate the
-															relevant premiums.
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="agli-features__slide swiper-slide">
-										<div class="swiper-slide__items">
-											<div class="swiper-slide__item-features item-slide-features">
-												<div class="item-slide-features__img">
-													<img src="img/icon-features/features-icon-7.png" alt="">
-												</div>
-												<div class="item-slide-features__text">
-													<div class="item-slide-features__title">
-														<h3>
-															Claims Management
-														</h3>
-													</div>
-													<div class="item-slide-features__subtitle">
-														<p>
-															All customers have access to report claims online. Report
-															forms
-															can be customized according to your specific needs. Get
-															notifications about incoming claims to always be on the same
-															page with customers.
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Если нужна пагинация -->
-								<div class="swiper-pagination"></div>
+						<div class="about__item item">
+							<div data-watch data-watch-once data-watch-threshold="0.2" class="item__first-column">
+								<span>02</span>
+							</div>
+							<div data-watch data-watch-once data-watch-threshold="0.2" class="item__second-column">
+								<h3>Safe in the cloud</h3>
+								<p>
+									Audits happen — and when they do we want to meet them with a smile! RiskVille allows you
+									to have all your data in one safe harbour, MS Azure. RiskVille is GDPR compliant,
+									certified, and audited by Grant Thornton.
+								</p>
+							</div>
+						</div>
+						<div class="about__item item">
+							<div data-watch data-watch-once data-watch-threshold="0.2" class="item__first-column">
+								<span>03</span>
+							</div>
+							<div data-watch data-watch-once data-watch-threshold="0.2" class="item__second-column">
+								<h3>Be Compliant</h3>
+								<p>
+									RiskVille supports your teamwork and compliance in daily operations with workflows,
+									audit trails and automated actions. By having all client related data and documents
+									together in one solution, redundancy is eliminated, and data interactions and compliance
+									is strengthened.
+								</p>
+							</div>
+						</div>
+						<div class="about__item item">
+							<div data-watch data-watch-once class="item__first-column">
+								<span>04</span>
+							</div>
+							<div data-watch data-watch-once class="item__second-column">
+								<h3>No needle in the arm</h3>
+								<p>
+									We help with implementation and support you ongoingly, but we don’t want to be the
+									needle in your arm. So, with a little training you can customize the platform yourself,
+									and add new product lines, claim lines, workflows, policy templates and much more from
+									within the system. No hidden costs !
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="features-page__bg" data-watch-threshold="0.5" data-watch>
-					<img src="img/icon-features/features-bg.png" alt="" width="100%">
+			</section>
+			<section class="problem" id="problem">
+				<div class="problem__container">
+					<div class="problem__body body" data-watch data-watch-once>
+						<div class="body__box">
+							<h3 class="body__title">
+								<span>RiskVille</span> is a cloud based solution designed for any type of insurance
+								business.
+							</h3>
+							<p class="body__text">
+								Manage your day-to-day operations including customer relationships, claims, policies and
+								risks in one system
+							</p>
+							<a class="body__button" data-goto-header data-goto=".contacts" href="#contacts">Schedule a
+								Demo</a>
+						</div>
+						<div class="swiper-container swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<picture><source srcset="img/problem-1.webp" type="image/webp"><img src="img/problem-1.png" alt="Problem photo 1" width="100%"></picture>
+								</div>
+								<div class="swiper-slide">
+									<picture><source srcset="img/problem-1.webp" type="image/webp"><img src="img/problem-1.png" alt="Problem photo 2" width="100%"></picture>
+								</div>
+								<div class="swiper-slide">
+									<picture><source srcset="img/problem-1.webp" type="image/webp"><img src="img/problem-1.png" alt="Problem photo 3" width="100%"></picture>
+								</div>
+								<div class="swiper-slide">
+									<picture><source srcset="img/problem-1.webp" type="image/webp"><img src="img/problem-1.png" alt="Problem photo 4" width="100%"></picture>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+				<div class="problem__dots" data-prlx-mouse data-prlx-a="20" data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr>
+				</div>
+				<div class="problem__dots2" data-prlx-mouse data-prlx-a="20" data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr>
 				</div>
 			</section>
-			<section class="benefits-page" id="benefits-page">
-				<div class="benefits-page__container">
-					<div class="benefits-page__title">
+			<section class="features" id="features">
+				<div class="features__container">
+					<div class="features__box box-features">
+						<div class="box-features__first-row" data-watch data-watch-threshold="0.5" data-watch-once>
+							<div class="box-features__title">
+								<h3>
+									Features<br class="br"> <span>RiskVille</span>
+								</h3>
+							</div>
+							<div class="box-features__item item-features change-item1">
+								<img class="item-features__icon" src="img/features-1.svg" alt="Features icon 1">
+								<h4 class="item-features__title">
+									Rating, Quoting and Billing
+								</h4>
+								<p class="item-features__text">
+									Conduct rate analysis and pricing for any insurance product, standardize quotes,
+									calculate premiums, and taxes. Manage underwriting rules by following information on
+									possible risks and threats.
+								</p>
+							</div>
+						</div>
+						<div class="box-features__second-row">
+							<div class="box-features__items" data-watch data-watch-threshold="0.5" data-watch-once>
+								<div class="box-features__item item-features change-item">
+									<img class="item-features__icon" src="img/features-1.svg" alt="Features icon 1">
+									<h4 class="item-features__title">
+										Rating, Quoting and Billing
+									</h4>
+									<p class="item-features__text">
+										Conduct rate analysis and pricing for any insurance product, standardize quotes,
+										calculate premiums, and taxes. Manage underwriting rules by following information on
+										possible risks and threats.
+									</p>
+								</div>
+								<div class="box-features__item item-features">
+									<img class="item-features__icon" src="img/features-2.svg" alt="Features icon 2">
+									<h4 class="item-features__title">
+										Policy Management
+									</h4>
+									<p class="item-features__text">
+										Get standard policy templates that can be issued upon binding. Create policies with
+										different risk coverage and compliance, check policies, monitor renewals, prepare
+										reports, renew policies automatically.
+									</p>
+								</div>
+								<div class="box-features__item item-features">
+									<img class="item-features__icon" src="img/features-3.svg" alt="Features icon 3">
+									<h4 class="item-features__title">
+										Certificates Issuance
+									</h4>
+									<p class="item-features__text">
+										Upon the holder’s request, provide quick verification of the policy existence by
+										allowing a holder to get a certificate of insurance (COI) online. The certificate
+										can be printed directly from RiskVille.
+									</p>
+								</div>
+								<div class="box-features__item item-features">
+									<img class="item-features__icon" src="img/features-4.svg" alt="Features icon 4">
+									<h4 class="item-features__title">
+										Risk Management
+									</h4>
+									<p class="item-features__text">
+										Use a comprehensive set of tools for risk management, including risk monitoring,
+										identification, assessment, and reporting. Calculate risks for all types of assets
+										and allocate the relevant premiums.
+									</p>
+								</div>
+								<div class="box-features__item item-features">
+									<img class="item-features__icon" src="img/features-5.svg" alt="Features icon 5">
+									<h4 class="item-features__title">
+										Claims Management
+									</h4>
+									<p class="item-features__text">
+										All customers have access to report claims online. Report forms can be customized
+										according to your specific needs. Get notifications about incoming claims to always
+										be on the same page with customers.
+									</p>
+								</div>
+								<div class="box-features__item item-features">
+									<img class="item-features__icon" src="img/features-6.svg" alt="Features icon 6">
+									<h4 class="item-features__title">
+										360 Customer View
+									</h4>
+									<p class="item-features__text">
+										Create unified profiles that keep all the customer data, including demographics,
+										contacts, documents, and policies. Get a holistic view of historical and behavioral
+										data like email interactions.
+									</p>
+								</div>
+								<div class="box-features__item item-features">
+									<img class="item-features__icon" src="img/features-7.svg" alt="Features icon 7">
+									<h4 class="item-features__title">
+										Customer Portal
+									</h4>
+									<p class="item-features__text">
+										Utilize RiskVille as a portal for sharing data and documents with your clients.
+										RiskVille Customer Portal allows policyholders to edit contact information, view
+										details of their quotes and policies, add assets, submit and track claims.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="features__bg">
+					<picture><source srcset="img/features-bg.webp" type="image/webp"><img src="img/features-bg.png" alt="" width="100%"></picture>
+				</div>
+			</section>
+			<section class="benefits" id="benefits">
+				<div class="benefits__container">
+					<div class="benefits__title">
 						<h3>
 							Benefits for your business
 						</h3>
 					</div>
-					<!--					<div class="benefits-page__items">-->
-					<!--						<div class="benefits-page__item item-benefits-1">-->
-					<!--							<h4>PROCESS CLAIMS FASTER</h4>-->
-					<!--						</div>-->
-					<!--						<div class="benefits-page__item item-benefits-2">-->
-					<!--							<h4>ELIMINATE HUMAN FACTOR</h4>-->
-					<!--						</div>-->
-					<!--						<div class="benefits-page__item item-benefits-3">-->
-					<!--							<h4>INCREASE CUSTOMER SATISFACTION AND LOYALTY</h4>-->
-					<!--						</div>-->
-					<!--						<div class="benefits-page__item item-benefits-4">-->
-					<!--							<h4>REDUCE MANUAL WORK</h4>-->
-					<!--						</div>-->
-					<!--						<div class="benefits-page__item item-benefits-5">-->
-					<!--							<h4>ENHANCE CUSTOMER SELF-SERVICE</h4>-->
-					<!--						</div>-->
-					<!--						<div class="benefits-page__item item-benefits-6">-->
-					<!--							<h4>ENSURE EXCELLENT CUSTOMER EXPERIENCE</h4>-->
-					<!--						</div>-->
-					<!--					</div>-->
 				</div>
-				<div class="benefits-page__bg"></div>
+				<div class="benefits__bg">
+				</div>
+				<div class="benefits__dots1" data-prlx-mouse data-prlx-a="20" data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr></div>
+				<div class="benefits__dots2"></div>
 			</section>
-			<section class="why-riskVille-page" id="why-riskVille-page">
-				<div class="why-riskVille-page__container">
-					<div class="why-riskVille-page__body">
-						<div class="why-riskVille-page__title">
-							<h3>
-								Why RiskVille?
-							</h3>
-						</div>
-						<div class="why-riskVille-page__static">
-							<div class="why-riskVille-page__items">
-								<div class="why-riskVille-page__item item-why item-1" data-watch-once data-watch-threshold="0.5" data-watch>
-									<div class="item-why__top">
-										<img src="img/icon-why-riskville/icon-1.png" alt="">
-									</div>
-									<div class="item-why__bottom">
-										<div class="item-why__title">
-											<h3>
-												No hidden
-												costs
-											</h3>
-										</div>
-										<div class="item-why__subtitle">
-											<p>
-												All we need to know to quote a gruaranteed license cost is the number of
-												users.
-											</p>
-										</div>
-									</div>
+			<section class="why-riskVille" id="why-riskVille">
+				<div class="why-riskVille__container">
+					<div class="why-riskVille__body">
+						<h3 class="why-riskVille__title">
+							Why RiskVille?
+						</h3>
+						<div class="why-riskVille__items">
+							<div class="why-riskVille__item item-why item-1" data-watch-once data-watch>
+								<div class="item-why__top">
+									<img src="img/why-riskville.svg" alt="">
 								</div>
-								<div class="why-riskVille-page__item item-why item-2" data-watch-once data-watch-threshold="0.5" data-watch>
-									<div class="item-why__top">
-										<img src="img/icon-why-riskville/icon-2.png" alt="">
-									</div>
-									<div class="item-why__bottom">
-										<div class="item-why__title">
-											<h3>
-												Fast
-												Implementation
-											</h3>
-										</div>
-										<div class="item-why__subtitle">
-											<p>
-												New captives or product-lines can be implemented in a few days
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="why-riskVille-page__item item-why item-3" data-watch-once data-watch-threshold="0.5" data-watch>
-									<div class="item-why__top">
-										<img src="img/icon-why-riskville/icon-3.png" alt="">
-									</div>
-									<div class="item-why__bottom">
-										<div class="item-why__title">
-											<h3>
-												Customization without developers
-											</h3>
-										</div>
-										<div class="item-why__subtitle">
-											<p>
-												Customizable options at no additional cost
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="why-riskVille-page__item item-why item-4" data-watch-once data-watch-threshold="0.5" data-watch>
-									<div class="item-why__top">
-										<img src="img/icon-why-riskville/icon-4.png" alt="">
-									</div>
-									<div class="item-why__bottom">
-										<div class="item-why__title">
-											<h3>
-												Secure
-												and compliant
-											</h3>
-										</div>
-										<div class="item-why__subtitle">
-											<p>
-												Hosted on the safe and secure Microsoft Azure platform; GDPR compliant
-											</p>
-										</div>
-									</div>
+								<div class="item-why__bottom">
+									<h3 class="item-why__title">
+										No hidden <br>
+										costs
+									</h3>
+									<p class="item-why__subtitle">
+										All we need to know to quote a gruaranteed license cost is the number of
+										users.
+									</p>
 								</div>
 							</div>
-						</div>
-						<div class="why-riskVille-page__agile">
-							<div class="why-riskVille-page__agile agile-swipper">
-								<!-- Оболочка слайдера -->
-								<div class="agile-swipper__slider Swiper-2">
-									<!-- Двигающееся часть слайдера -->
-									<div class="agile-swipper__wrapper swiper-wrapper">
-										<!-- Слайд -->
-										<div class="agile-swipper__slide swiper-slide">
-											<div class="swiper-slide__item item-slide">
-												<div class="item-slide__top">
-													<img src="img/icon-why-riskville/icon-1.png" alt="">
-												</div>
-												<div class="item-slide__bottom">
-													<div class="item-slide__title">
-														<h3>
-															No hidden
-															costs
-														</h3>
-													</div>
-													<div class="item-slide__subtitle">
-														<p>
-															All we need to know to quote a gruaranteed license cost is
-															the number of users.
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="agile-swipper__slide swiper-slide">
-											<div class="swiper-slide__item item-slide">
-												<div class="item-slide__top">
-													<img src="img/icon-why-riskville/icon-2.png" alt="">
-												</div>
-												<div class="item-slide__bottom">
-													<div class="item-slide__title">
-														<h3>
-															Fast
-															Implementation
-														</h3>
-													</div>
-													<div class="item-slide__subtitle">
-														<p>
-															New captives or product-lines can be implemented in a few
-															days
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="agile-swipper__slide swiper-slide">
-											<div class="swiper-slide__item item-slide">
-												<div class="item-slide__top">
-													<img src="img/icon-why-riskville/icon-3.png" alt="">
-												</div>
-												<div class="item-slide__bottom">
-													<div class="item-slide__title">
-														<h3>
-															Customization without developers
-														</h3>
-													</div>
-													<div class="item-slide__subtitle">
-														<p>
-															Customizable options at no additional cost
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="agile-swipper__slide swiper-slide">
-											<div class="swiper-slide__item item-slide">
-												<div class="item-slide__top">
-													<img src="img/icon-why-riskville/icon-4.png" alt="">
-												</div>
-												<div class="item-slide__bottom">
-													<div class="item-slide__title">
-														<h3>
-															Secure
-															and compliant
-														</h3>
-													</div>
-													<div class="item-slide__subtitle">
-														<p>
-															Hosted on the safe and secure Microsoft Azure platform; GDPR
-															compliant
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Если нужна пагинация -->
-									<div class="swiper-pagination"></div>
+							<div class="why-riskVille__item item-why item-2" data-watch-once data-watch>
+								<div class="item-why__top">
+									<img src="img/why-riskville-2.svg" alt="">
+								</div>
+								<div class="item-why__bottom">
+									<h3 class="item-why__title">
+										Fast
+										Implementation
+									</h3>
+									<p class="item-why__subtitle">
+										New captives or product-lines can be implemented in a few days
+									</p>
+								</div>
+							</div>
+							<div class="why-riskVille__item item-why item-3" data-watch-once data-watch>
+								<div class="item-why__top">
+									<img src="img/why-riskville-3.svg" alt="">
+								</div>
+								<div class="item-why__bottom">
+									<h3 class="item-why__title">
+										Customization without developers
+									</h3>
+									<p class="item-why__subtitle">
+										Customizable options at no additional cost
+									</p>
+								</div>
+							</div>
+							<div class="why-riskVille__item item-why item-4" data-watch-once data-watch>
+								<div class="item-why__top">
+									<img src="img/why-riskville-4.svg" alt="">
+								</div>
+								<div class="item-why__bottom">
+									<h3 class="item-why__title">
+										Secure
+										and compliant
+									</h3>
+									<p class="item-why__subtitle">
+										Hosted on the safe and secure Microsoft Azure platform; GDPR compliant
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="why-riskVille-page__bg">
-					<img src="img/icon-why-riskville/bg-why-riskville.png" alt="">
-				</div>
-				<div class="why-riskVille-page__bg2">
-					<img src="img/icon-why-riskville/bg-why-riskville-2.png" alt="">
-				</div>
 			</section>
-			<section class="information-page" id="information-page">
-				<div class="information-page__container">
-					<div class="information-page__body" data-watch-once data-watch-threshold="0.5" data-watch>
-						<div class="information-page__title">
-
-							<h3>
-								Get timely information.Get rid
-								of paperwork.Get living.
-							</h3>
+			<section class="our-tech" id="our-tech">
+				<div class="our-tech__container">
+					<h3 class="our-tech__title">
+						Our <span> tech stack </span>
+					</h3>
+					<div class="our-tech__items">
+						<div class="our-tech__item tech-item">
+							<h3 class="tech-item__title">Frontend</h3>
+							<div class="tech-item__box">
+								<img src="img/angular.svg" alt="">
+								<img src="img/typeScript.svg" alt="">
+								<img src="img/ngrx.svg" alt="">
+								<img src="img/signalR.svg" alt="">
+								<img src="img/cypress.svg" alt="">
+								<img src="img/primeNG.svg" alt="">
+							</div>
 						</div>
-						<div class="information-page__subtitle">
-							<p>
-								Be flexible with RiskVille, satisfy operational demands and respond to reporting
-								requests from your parent company
-							</p>
+						<div class="our-tech__item tech-item">
+							<h3 class="tech-item__title">Backend</h3>
+							<div class="tech-item__box">
+								<img src="img/c.svg" alt="">
+								<img src="img/aspNet.svg" alt="">
+								<img src="img/signalR.svg" alt="">
+								<img src="img/twillo.svg" alt="">
+								<img src="img/aspose.svg" alt="">
+								<img src="img/sendGrid.svg" alt="">
+							</div>
 						</div>
-						<div class="information-page__button">
-							<a data-goto-header data-goto=".contacts-page" href="#contacts-page" class="information-page__btn orange">Schedule a Demo</a>
-							<a data-goto-header data-goto=".contacts-page" href="#contacts-page" class="information-page__btn transparent">Contact us</a>
+						<div class="our-tech__item tech-item">
+							<h3 class="tech-item__title">Tools</h3>
+							<div class="tech-item__box">
+								<img src="img/authy.svg" alt="">
+								<img src="img/jira.svg" alt="">
+								<img src="img/azure.svg" alt="">
+								<img src="img/chatra.svg" alt="">
+								<img src="img/git.svg" alt="">
+								<img src="img/webStorm.svg" alt="">
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="information-page__bg"></div>
+				<div class="our-tech__dots1" data-prlx-mouse data-prlx-a="20" data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr></div>
+				<div class="our-tech__dots2"></div>
 			</section>
-			<section class="clients-page" id="clients-page">
-				<div class="clients-page__container">
-					<div class="clients-page__slider Swiper-4">
-						<div class="clients-page__wrapper swiper-wrapper">
-							<div class="clients-page__slide swiper-slide" data-watch-threshold="0.5" data-watch data-watch-once>
-								<div class="clients-swiper-slide__body clients-body-slide">
-									<div class="clients-body-slide__img">
-										<img src="img/clients-1.png" alt="">
-									</div>
-									<div class="clients-body-slide__text">
-										<div class="clients-body-slide__title">
-											<h3>Our clients trust us</h3>
+			<section class="clients" id="clients">
+				<div class="clients__container">
+					<h3 class="clients__title">
+						Our <span>clients trust us</span>
+					</h3>
+					<div class="swiper-container swiper-2">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="clients__item item-clients">
+									<div class="item-clients__body">
+										<div class="item-clients__img">
+											<img src="img/client-1.svg" alt="">
 										</div>
-										<div class="clients-body-slide__subtitle">
-											<p>
-												“Be flexible with RiskVille, satisfy operational demands and respond
-												to reporting requests from your parent company Be flexible with
-												RiskVille, satisfy operational demands and respond to reporting
-												requests from your parent company”
-											</p>
-										</div>
-										<div class="clients-body-slide__row">
-											<div class="clients-body-slide__full-name">
-												<h3>
-													Geoff Still
-												</h3>
-												<ul>
-													<li>TABS Insurance</li>
-													<li>Vice President Finance &Operations</li>
-												</ul>
+										<div class="item-clients__text">
+											<h3 class="item-clients__name">Per Wistisen</h3>
+											<div class="item-clients__row">
+												<span class="item-clients__company">FMG</span>
+												<a href="#" data-popup="#popup" class="item-clients__button">Get case
+													study</a>
 											</div>
-											<div class="clients-body-slide__button">
-												<button data-popup="#popup" class="clients-body-slide__btn">Get case
-													study</button>
-											</div>
+											<p class="item-clients__text">We made the right decision when we chose
+												RiskVille as our future business partner. We needed a future-proof IT
+												solution that could support our business strategy, and we got it. Ease
+												of use combined with a business partner who actively listens to our
+												wishes was important to us. Our employees were directly involved in the
+												development of the platform, hands on throughout the process. We know
+												the system inside out.</p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="clients-page__slide swiper-slide">
-								<div class="clients-swiper-slide__body clients-body-slide">
-									<div class="clients-body-slide__img">
-										<img src="img/clients-1.png" alt="">
-									</div>
-									<div class="clients-body-slide__text">
-										<div class="clients-body-slide__title">
-											<h3>Our clients trust us</h3>
+							<div class="swiper-slide">
+								<div class="clients__item item-clients">
+									<div class="item-clients__body">
+										<div class="item-clients__img">
+											<img src="img/client-1.svg" alt="">
 										</div>
-										<div class="clients-body-slide__subtitle">
-											<p>
-												“Be flexible with RiskVille, satisfy operational demands and respond
-												to reporting requests from your parent company Be flexible with
-												RiskVille, satisfy operational demands and respond to reporting
-												requests from your parent company”
-											</p>
-										</div>
-										<div class="clients-body-slide__row">
-											<div class="clients-body-slide__full-name">
-												<h3>
-													Geoff Still
-												</h3>
-												<ul>
-													<li>TABS Insurance</li>
-													<li>Vice President Finance &Operations</li>
-												</ul>
+										<div class="item-clients__text">
+											<h3 class="item-clients__name">Per Wistisen</h3>
+											<div class="item-clients__row">
+												<span class="item-clients__company">FMG</span>
+												<a href="#" data-popup="#popup" class="item-clients__button">Get case
+													study</a>
 											</div>
-											<div class="clients-body-slide__button">
-												<button data-popup="#popup" class="clients-body-slide__btn">Get case
-													study</button>
-											</div>
+											<p class="item-clients__text">We made the right decision when we chose
+												RiskVille as our future business partner. We needed a future-proof IT
+												solution that could support our business strategy, and we got it. Ease
+												of use combined with a business partner who actively listens to our
+												wishes was important to us. Our employees were directly involved in the
+												development of the platform, hands on throughout the process. We know
+												the system inside out.</p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="clients-page__slide swiper-slide">
-								<div class="clients-swiper-slide__body clients-body-slide">
-									<div class="clients-body-slide__img">
-										<img src="img/clients-1.png" alt="">
-									</div>
-									<div class="clients-body-slide__text">
-										<div class="clients-body-slide__title">
-											<h3>Our clients trust us</h3>
+							<div class="swiper-slide">
+								<div class="clients__item item-clients">
+									<div class="item-clients__body">
+										<div class="item-clients__img">
+											<img src="img/client-1.svg" alt="">
 										</div>
-										<div class="clients-body-slide__subtitle">
-											<p>
-												“Be flexible with RiskVille, satisfy operational demands and respond
-												to reporting requests from your parent company Be flexible with
-												RiskVille, satisfy operational demands and respond to reporting
-												requests from your parent company”
-											</p>
-										</div>
-										<div class="clients-body-slide__row">
-											<div class="clients-body-slide__full-name">
-												<h3>
-													Geoff Still
-												</h3>
-												<ul>
-													<li>TABS Insurance</li>
-													<li>Vice President Finance &Operations</li>
-												</ul>
+										<div class="item-clients__text">
+											<h3 class="item-clients__name">Per Wistisen</h3>
+											<div class="item-clients__row">
+												<span class="item-clients__company">FMG</span>
+												<a href="#" data-popup="#popup" class="item-clients__button">Get case
+													study</a>
 											</div>
-											<div class="clients-body-slide__button">
-												<button data-popup="#popup" class="clients-body-slide__btn">Get case
-													study</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="clients-page__slide swiper-slide">
-								<div class="clients-swiper-slide__body clients-body-slide">
-									<div class="clients-body-slide__img">
-										<img src="img/clients-1.png" alt="">
-									</div>
-									<div class="clients-body-slide__text">
-										<div class="clients-body-slide__title">
-											<h3>Our clients trust us</h3>
-										</div>
-										<div class="clients-body-slide__subtitle">
-											<p>
-												“Be flexible with RiskVille, satisfy operational demands and respond
-												to reporting requests from your parent company Be flexible with
-												RiskVille, satisfy operational demands and respond to reporting
-												requests from your parent company”
-											</p>
-										</div>
-										<div class="clients-body-slide__row">
-											<div class="clients-body-slide__full-name">
-												<h3>
-													Geoff Still
-												</h3>
-												<ul>
-													<li>TABS Insurance</li>
-													<li>Vice President Finance &Operations</li>
-												</ul>
-											</div>
-											<div class="clients-body-slide__button">
-												<button data-popup="#popup" class="clients-body-slide__btn">Get case
-													study</button>
-											</div>
+											<p class="item-clients__text">We made the right decision when we chose
+												RiskVille as our future business partner. We needed a future-proof IT
+												solution that could support our business strategy, and we got it. Ease
+												of use combined with a business partner who actively listens to our
+												wishes was important to us. Our employees were directly involved in the
+												development of the platform, hands on throughout the process. We know
+												the system inside out.</p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="swiper-pagination"></div>
-						<div class="clients-body-slide__button-second">
-							<button class="clients-body-slide__btn" data-popup="#popup">Get case study</button>
-						</div>
 					</div>
 				</div>
 			</section>
-			<section class="news-page" id="news-page">
-				<div class="news-page__container">
-					<div class="news-page__body">
-						<div class="news-page__title">
-							<h3>
-								newscast
-							</h3>
-						</div>
-						<div class="news-page__items">
-							<div class="news-page__item item-news active">
-								<div class="item-news__img">
-
-								</div>
-								<div class="item-news__bg">
-									<div class="item-news__subtitle">
-										<span>news</span>
-									</div>
-									<div class="item-news__title">
-										<h3>
-											No coding =
-											No needle
-											in the arm
-										</h3>
-									</div>
-									<div class="item-news__text">
-										<p>
-											RiskVille is a versatile cloud solution that can be adapted to your business
-											without special development. The customization is done via data and
-											templates...
-										</p>
-									</div>
-									<div class="item-news__link">
-										<a href="">Read more</a>
-									</div>
-								</div>
-							</div>
-							<div class="news-page__item item-news">
-								<div class="item-news__img">
-
-								</div>
-								<div class="item-news__bg">
-									<div class="item-news__subtitle">
-										<span>news</span>
-									</div>
-									<div class="item-news__title">
-										<h3>
-											RiskVille
-											ADVANTAGES
-										</h3>
-									</div>
-									<div class="item-news__text">
-										<p>
-											Including no special development, RiskVille can be implemented in less than
-											2 weeks...
-										</p>
-									</div>
-									<div class="item-news__link">
-										<a href="">Read more</a>
-									</div>
-								</div>
-							</div>
-							<div class="news-page__item item-news">
-								<div class="item-news__img">
-								</div>
-								<div class="item-news__bg">
-									<div class="item-news__subtitle">
-										<span>news</span>
-									</div>
-									<div class="item-news__title">
-										<h3>
-											ENDORSEMENT
-										</h3>
-									</div>
-									<div class="item-news__text">
-										<p>
-											At RiskVille we consider the close relantionship beetween our solution
-											and
-											our clients everyday bussiness..
-										</p>
-									</div>
-									<div class="item-news__link">
-										<a href="">Read more</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="news-page__button">
-							<a href="news.html" class="news-page__btn">View all</a>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="contacts-page" id="contacts-page">
-				<div class="contacts-page__container">
-					<div class="contacts-page__body">
-						<div class="contacts-page__bg" data-watch-once data-watch-threshold="0.5" data-watch>
-							<img src="img/contacts-bg.png" alt="">
-						</div>
-						<div class="contacts-page__bg-2">
-							<img src="img/contacts-bg-2.png" alt="">
-						</div>
-						<form action="#" class="contacts-page__form form-contatcts" data-watch-once data-watch-threshold="0.5" data-watch>
-							<div class="form-contatcts__title">
-								<h3>
-									Write us
-								</h3>
-							</div>
-							<div class="form-contatcts__email">
-								<label for="email-contacts">Email</label>
-								<input type="text" placeholder="" id="email-contacts" class="form-contatcts__input" data-validate data-required="email" data-required="email" data-error="Enter the correct Email">
-							</div>
-							<div class="form-contatcts__textarea">
-								<h3>
-									Message
-								</h3>
-								<textarea cols="" rows="10"></textarea>
-							</div>
-							<div class="form-contatcts__message">
-								<p>
-									* Feel free to contact us and we will get back to you within 24 hours
-								</p>
-							</div>
-							<div class="form-contatcts__button">
-								<button type="submit" class="form-contatcts__ntb">Send Message</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer class="footer-page">
-			<div class="footer-page__container">
-				<div class="footer-page__top ">
-					<div class="footer-page__logo">
+			<section class="news" id="news">
+				<div class="news__container">
+					<h3 class="news__title">
+						Newscast
+					</h3>
+					<div class="news__items">
 						<a href="">
-							<img src="img/footer-logo.png" alt="">
+							<div class="news__item item-news">
+								<div class="item-news__img">
+									<picture><source srcset="img/news.webp" type="image/webp"><img src="img/news.png" alt=""></picture>
+								</div>
+								<div class="item-news__info">
+									<h3 class="item-news__title">
+										RiskVille staff meeting in Ukraine
+									</h3>
+									<p class="item-news__text">
+										RiskVille staff meeting in Ukraine. We were 4 employees/partners from Denmark who
+										met 4
+										brave Ukrainian RiskVille people for a few days in Ukraine.
+									</p>
+									<a href="#" class="item-news__link">Read more</a>
+								</div>
+								<div class="item-news__date">
+									<span class="item-news__day">25</span>
+									<span class="item-news__month">Jul</span>
+								</div>
+							</div>
+						</a>
+						<a href="">
+							<div class="news__item item-news">
+								<div class="item-news__img">
+									<picture><source srcset="img/news.webp" type="image/webp"><img src="img/news.png" alt=""></picture>
+								</div>
+								<div class="item-news__info">
+									<h3 class="item-news__title">
+										RiskVille staff meeting in Ukraine
+									</h3>
+									<p class="item-news__text">
+										RiskVille staff meeting in Ukraine. We were 4 employees/partners from Denmark who
+										met 4
+										brave Ukrainian RiskVille people for a few days in Ukraine.
+									</p>
+									<a href="#" class="item-news__link">Read more</a>
+								</div>
+								<div class="item-news__date">
+									<span class="item-news__day">25</span>
+									<span class="item-news__month">Jul</span>
+								</div>
+							</div>
+						</a>
+						<a href="">
+							<div class="news__item item-news">
+								<div class="item-news__img">
+									<picture><source srcset="img/news.webp" type="image/webp"><img src="img/news.png" alt=""></picture>
+								</div>
+								<div class="item-news__info">
+									<h3 class="item-news__title">
+										RiskVille staff meeting in Ukraine
+									</h3>
+									<p class="item-news__text">
+										RiskVille staff meeting in Ukraine. We were 4 employees/partners from Denmark who
+										met 4
+										brave Ukrainian RiskVille people for a few days in Ukraine.
+									</p>
+									<a href="#" class="item-news__link">Read more</a>
+								</div>
+								<div class="item-news__date">
+									<span class="item-news__day">25</span>
+									<span class="item-news__month">Jul</span>
+								</div>
+							</div>
 						</a>
 					</div>
-					<div class="footer-page__menu menu-footer">
+				</div>
+				<div class="news__dots1" data-prlx-mouse data-prlx-a="20" data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr></div>
+				<div class="news__dots2"></div>
+			</section>
+			<section class="contacts" id="contacts">
+				<div class="contacts__container">
+					<div class="contacts__text">
+						<h3>
+							Write us
+						</h3>
+						<p>
+							The RiskVille platform offers a very agile system which accommodate with our needs for servicing
+							clients based on a huge variety of different industries. The system is easy to configure and
+							maintain and still offers the possibility to be in control with all relevant system components.
+						</p>
+					</div>
+					<form class="contacts__form form">
+						<input data-validate data-required="email" data-error="No correctly" type="email" class="form__email" placeholder="Email">
+						<textarea placeholder="Message" cols="30" rows="10" class="form__textarea">
+                    </textarea>
+						<button type="submit" class="form__btn">Send Message</button>
+						<p class="form__text">* Feel free to contact us, and we will get back to you within 24 hours</p>
+					</form>
+				</div>
+				<div class="contacts__hr-top"></div>
+				<div class="contacts__hr-bottom"></div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__top ">
+					<div class="footer__logo">
+						<a href="" data-goto-header data-goto=".header__full-screen">
+							<img src="img/logo.svg" alt="logo">
+						</a>
+					</div>
+					<div class="footer__menu menu-footer">
 						<div class="menu-footer__body">
 							<ul class="menu-footer__list">
 								<li class="menu-footer__item">
-									<a data-goto-header data-goto=".about-page" href="#about-page" class="menu-footer__link">
+									<a data-goto-header data-goto=".about" href="#about" class="menu-footer__link">
 										About
 									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a data-goto-header data-goto=".problem-page" href="#problem-page" class="menu-footer__link">
+									<a data-goto-header data-goto=".problem" href="#about" class="menu-footer__link">
 										Problem
 									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a data-goto-header data-goto=".solution-page" href="#" class="menu-footer__link">
+									<a data-goto-header data-goto=".features" href="" class="menu-footer__link">
 										Solution
 									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a data-goto-header data-goto=".benefits-page" href="#benefits-page" class="menu-footer__link">
+									<a data-goto-header data-goto=".benefits" href="#benefits" class="menu-footer__link">
 										Benefits
 									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a data-goto-header data-goto=".why-riskVille-page" href="#why-riskVille-page" class="menu-footer__link">
+									<a data-goto-header data-goto=".why-riskVille" class="menu-footer__link" href="#why-riskVille">
 										Testimonials
 									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a data-goto-header data-goto=".contacts-page" href="#contacts-page" class="menu-footer__link">
+									<a data-goto-header data-goto=".contacts" class="menu-footer__link" href="#contacts">
 										Contacts
 									</a>
 								</li>
@@ -1135,30 +665,30 @@
 									</a>
 								</li>
 							</ul>
+							<ul class="menu-footer__list2">
+								<div class="menu-footer__item2">
+									<a class="menu-footer__link" data-goto-header data-goto=".about" href="">About</a>
+									<a class="menu-footer__link" data-goto-header data-goto=".features" href="">Solution</a>
+									<a class="menu-footer__link" data-goto-header data-goto=".benefits" href="">Benefits</a>
+								</div>
+								<div class="menu-footer__item2">
+									<a class="menu-footer__link" data-goto-header data-goto=".why-riskVille" href="">Testimonials</a>
+									<a class="menu-footer__link" data-goto-header data-goto=".contacts" href="">Contacts</a>
+									<a class="menu-footer__link" href="#news.html">News</a>
+								</div>
+							</ul>
 						</div>
 					</div>
 					<div class="footer-page__button">
-						<a href="#contacts-page" class="footer-page__btn btn-footer">Schedule a Demo</a>
-					</div>
-				</div>
-				<div class="footer-center-line">
-					<div class="footer-center-line__arrow"></div>
-					<div class="footer-center-line__button">
-						<a href="#contacts-page" class="footer-center-line__btn btn-footer">Schedule a Demo</a>
+						<a href="#contacts" data-goto-header data-goto=".contacts" class="footer-page__btn btn-footer">Schedule
+							a Demo</a>
 					</div>
 				</div>
 				<div class="footer-bottom">
 					<div class="footer-bottom__items">
 						<div class="footer-bottom__item item-footer">
-							<div class="footer-page__logo-2">
-								<a href="">
-									<img src="img/footer-logo.png" alt="">
-								</a>
-							</div>
-						</div>
-						<div class="footer-bottom__item item-footer">
 							<div class="item-footer__country">
-								<span>USA</span>
+								<span>RiskVille US</span>
 							</div>
 							<div class="item-footer__email">
 								<a href="#">info@riskville.com</a>
@@ -1168,13 +698,13 @@
 							</div>
 							<div class="item-footer__text">
 								<p>
-									Clifton Building 2661 Executive Center Circle US, Tallahassee, FL 32301
+									2285 Club Lake Drive Jacksonville Florida
 								</p>
 							</div>
 						</div>
 						<div class="footer-bottom__item item-footer">
 							<div class="item-footer__country">
-								<span> IRELAND</span>
+								<span> RiskVille Ltd</span>
 							</div>
 							<div class="item-footer__email">
 								<a href="info@ riskville.com">info@riskville.com</a>
@@ -1184,7 +714,7 @@
 							</div>
 							<div class="item-footer__text">
 								<p>
-									Dublin Broadmeadow Hall, Applewood Village, Swords
+									Broadmeadow Hall, Applewood Village, Swords, County Dublin, Ireland
 								</p>
 							</div>
 						</div>
@@ -1205,27 +735,49 @@
 							</div>
 						</div>
 					</div>
-					<div class="footer-botoom__line"></div>
 					<div class="footer-bottom__map">
 						<img src="img/footer-map.svg" alt="">
 					</div>
 				</div>
 				<div class="footer-social">
 					<div class="footer-social__icon">
-						<a href=""><img src="img/footer-linkedin.svg" alt=""></a>
-						<a href=""><img src="img/footer-facebook.svg" alt=""></a>
-						<a href=""><img src="img/footer-twitter.svg" alt=""></a>
+						<a href=""><img src="img/linkedin.svg" alt=""></a>
+						<a href=""><img src="img/facebook.svg" alt=""></a>
+						<a href=""><img src="img/twitter.svg" alt=""></a>
 					</div>
 					<div class="footer-social__subtitle">
-						<span>© 2020 Lift Media. All rights reserved</span>
+						<h3>© All rights reserved, RiskVille Limited 2023</h3>
+						<div class="footer-social__links">
+							<a href="terms-of-use.html">Terms and Conditions</a>
+							<span>|</span>
+							<a href="privacy-polycy.html">Privacy Policy</a>
+						</div>
 					</div>
 				</div>
 			</div>
+			<div class="footer__dots1" data-prlx-mouse data-prlx-a="20" data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr></div>
+			<div class="footer__dots2"></div>
 		</footer>
+
+
 	</div>
-	<script src="https://unpkg.com/swiper/js/swiper-events.min.js?_v=20230331173358"></script>
-	<script src="https://unpkg.com/swiper/js/swiper-mobile-detection.min.js?_v=20230331173358"></script>
-	<script src="js/app.min.js?_v=20230331173358"></script>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"><span></span></button>
+				<h3 class="popup__title">Get case Study</h3>
+				<p class="popup__text">
+					Please fill the from below and will send the case study directly on youremail
+				</p>
+				<form action="" class="popup__form">
+					<input type="text" placeholder="Name" class="popup__input-name">
+					<input data-validate data-required="email" data-error="No correctly" type="email" placeholder="Email" class="popup__input-email">
+					<button class="popup__button">Get my copy</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230725085331"></script>
 </body>
 
 </html>

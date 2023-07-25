@@ -6,351 +6,237 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230331173358">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230725085331">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css?_v=20230725085331" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-	<div class="wrapper">
-		<div class="news-page__header">
-			<header class="header">
-				<div class="header__container">
-					<div class="header-top">
-						<div class="header-top__logo">
-							<a href="index.html"><img src="img/logo-img.svg" alt="logo""></a>
-						</div>
-						<div class=" header-top__menu menu">
-								<nav class="menu__body">
-									<ul class="menu__list">
-										<div class="header-top__logo2">
-											<a href="index.html"><img src="img/logo-img.svg" alt="logo"></a>
-										</div>
-										<li class="menu__item">
-											<a href="index.html#about-page" class="menu__link">About</a>
-										</li>
-										<li class="menu__item">
-											<a href="index.html#problem-page" class="menu__link">Problem</a>
-										</li>
-										<li class="menu__item">
-											<a href="index.html#solution-page" class="menu__link">Solution</a>
-										</li>
-										<li class="menu__item">
-											<a href="index.html#benefits-page" class="menu__link">Benefits</a>
-										</li>
-										<li class="menu__item">
-											<a href="index.html#why-riskVille-page" class="menu__link">Testimonials</a>
-										</li>
-										<li class="menu__item">
-											<a href="index.html#contacts-page" class="menu__link">Contacts</a>
-										</li>
-										<li class="menu__item">
-											<a href="news.html" class="menu__link">News</a>
-										</li>
-										<button type="button" class="menu__icon-second icon-menu-second"><span></span></button>
-									</ul>
-								</nav>
-						</div>
-						<a class="menu__button" href="index.html#contacts-page">
-							Schedule a Demo
-						</a>
-						<button type="button" class="menu__icon icon-menu"><span></span></button>
-					</div>
-				</div>
-			</header>
+	<div id="loader">
+		<div class="loader">
+			<img src="img/logo.svg" alt="">
 		</div>
-		<main class="main-news">
-			<div class="main-news__container">
-				<div class="main-news__body">
-					<div class="main-news__items">
-						<a href="read-more.html">
-							<div class="main-news__item item-news">
-								<div class="item-news__img">
-									<img src="img/news-1.png" alt="">
-								</div>
-								<div class="item-news__bg">
-									<div class="item-news__subtitle">
-										<span>news</span>
-									</div>
-									<div class="item-news__title">
-										<h3>
-											No coding =
-											No needle
-											in the arm
-										</h3>
-									</div>
-									<div class="item-news__text">
-										<p>
-											RiskVille is a versatile cloud solution that can be adapted to your business
-											without special development. The customization is done via data and
-											templates...
-										</p>
-									</div>
-									<div class="item-news__link">
-										<a href="read-more.html">Read more</a>
-									</div>
-								</div>
-							</div>
-						</a>
-						<div class="main-news__item item-news">
-							<div class="item-news__img">
-								<img src="img/news-2.png" alt="">
-							</div>
-							<div class="item-news__bg">
-								<div class="item-news__subtitle">
-									<span>news</span>
-								</div>
-								<div class="item-news__title">
-									<h3>
-										RiskVille
-										ADVANTAGES
-									</h3>
-								</div>
-								<div class="item-news__text">
-									<p>
-										Including no special development, RiskVille can be implemented in less than
-										2
-										weeks...
-									</p>
-								</div>
-								<div class="item-news__link">
-									<a href="">Read more</a>
-								</div>
-							</div>
+	</div>
+	<div class="wrapper" id="content">
+		<header class="header header-news">
+			<div class="header__container">
+				<div class="header__logo">
+					<a href="index.html">
+						<img src="img/logo.svg" alt="logo">
+					</a>
+				</div>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a data-goto-header data-goto=".about" href="#about" class="menu__link">
+									About
+								</a>
+							</li>
+							<li class="menu__item">
+								<a data-goto-header data-goto=".features" href="features" class="menu__link">
+									Solution
+								</a>
+							</li>
+							<li class="menu__item">
+								<a data-goto-header data-goto=".benefits" href="#benefits" class="menu__link">
+									Benefits
+								</a>
+							</li>
+							<li class="menu__item">
+								<a data-goto-header data-goto=".why-riskVille" href="#why-riskVille" class="menu__link">
+									Testimonials
+								</a>
+							</li>
+							<li class="menu__item">
+								<a data-goto-header data-goto=".contacts" href="#contacts" class="menu__link">
+									Contacts
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="news.html" class="menu__link">News</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<a class="menu__button" data-goto-header data-goto=".contacts-page" href="#contacts">
+					Schedule a Demo
+				</a>
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
+			</div>
+		</header>
+		<main class="page-news">
+			<div class="page-news__container">
+				<div class="page-news__name-location">
+					<a href="index.html"> Home</a> / <a href="news.html"> News</a>
+				</div>
+				<h3 class="page-news__title">News</h3>
+				<div class="page-news__items">
+					<a href="read-more.html" class="page-news__item item-news">
+						<div class="item-news__img" style="background-image: url('img/news.png')">
 						</div>
-						<div class="main-news__item item-news">
-							<div class="item-news__img">
-								<img src="img/news-3.png" alt="">
-							</div>
-							<div class="item-news__bg">
-								<div class="item-news__subtitle">
-									<span>news</span>
-								</div>
-								<div class="item-news__title">
-									<h3>
-										ENDORSEMENT
-									</h3>
-								</div>
-								<div class="item-news__text">
-									<p>
-										At RiskVille we consider the close relantionship beetween our solution and our
-										clients everyday bussiness..
-									</p>
-								</div>
-								<div class="item-news__link">
-									<a href="">Read more</a>
-								</div>
-							</div>
+						<div class="item-news__date">
+							<span>12 min. read</span> <span>21 Jun 2023</span>
 						</div>
-						<div class="main-news__item item-news">
-							<div class="item-news__img">
-								<img src="img/news-1.png" alt="">
-							</div>
-							<div class="item-news__bg">
-								<div class="item-news__subtitle">
-									<span>news</span>
-								</div>
-								<div class="item-news__title">
-									<h3>
-										ENDORSEMENT
-									</h3>
-								</div>
-								<div class="item-news__text">
-									<p>
-										At RiskVille we consider the close relantionship beetween our solution and our
-										clients everyday bussiness..
-									</p>
-								</div>
-								<div class="item-news__link">
-									<a href="">Read more</a>
-								</div>
-							</div>
+						<h3 class="item-news__title">RiskVille release #69</h3>
+						<p class="item-news__info">On June 8, RiskVille deployed release version 2.69</p>
+					</a>
+					<a href="read-more.html" class="page-news__item item-news">
+						<div class="item-news__img" style="background-image: url('img/news.png')">
 						</div>
-						<div class="main-news__item item-news">
-							<div class="item-news__img">
-								<img src="img/news-1.png" alt="">
-							</div>
-							<div class="item-news__bg">
-								<div class="item-news__subtitle">
-									<span>news</span>
-								</div>
-								<div class="item-news__title">
-									<h3>
-										ENDORSEMENT
-									</h3>
-								</div>
-								<div class="item-news__text">
-									<p>
-										At RiskVille we consider the close relantionship beetween our solution and our
-										clients everyday bussiness..
-									</p>
-								</div>
-								<div class="item-news__link">
-									<a href="">Read more</a>
-								</div>
-							</div>
+						<div class="item-news__date">
+							<span>12 min. read</span> <span>21 Jun 2023</span>
 						</div>
-						<div class="main-news__item item-news">
-							<div class="item-news__img">
-								<img src="img/news-1.png" alt="">
-							</div>
-							<div class="item-news__bg">
-								<div class="item-news__subtitle">
-									<span>news</span>
-								</div>
-								<div class="item-news__title">
-									<h3>
-										ENDORSEMENT
-									</h3>
-								</div>
-								<div class="item-news__text">
-									<p>
-										At RiskVille we consider the close relantionship beetween our solution and our
-										clients everyday bussiness..
-									</p>
-								</div>
-								<div class="item-news__link">
-									<a href="">Read more</a>
-								</div>
-							</div>
+						<h3 class="item-news__title">RiskVille release #69</h3>
+						<p class="item-news__info">On June 8, RiskVille deployed release version 2.69</p>
+					</a>
+					<a href="read-more.html" class="page-news__item item-news">
+						<div class="item-news__img" style="background-image: url('img/news.png')">
 						</div>
-						<div class="main-news__item item-news">
-							<div class="item-news__img">
-								<img src="img/news-1.png" alt="">
-							</div>
-							<div class="item-news__bg">
-								<div class="item-news__subtitle">
-									<span>news</span>
-								</div>
-								<div class="item-news__title">
-									<h3>
-										ENDORSEMENT
-									</h3>
-								</div>
-								<div class="item-news__text">
-									<p>
-										At RiskVille we consider the close relantionship beetween our solution and our
-										clients everyday bussiness..
-									</p>
-								</div>
-								<div class="item-news__link">
-									<a href="">Read more</a>
-								</div>
-							</div>
+						<div class="item-news__date">
+							<span>12 min. read</span> <span>21 Jun 2023</span>
 						</div>
-						<div class="main-news__item item-news">
-							<div class="item-news__img">
-								<img src="img/news-1.png" alt="">
-							</div>
-							<div class="item-news__bg">
-								<div class="item-news__subtitle">
-									<span>news</span>
-								</div>
-								<div class="item-news__title">
-									<h3>
-										ENDORSEMENT
-									</h3>
-								</div>
-								<div class="item-news__text">
-									<p>
-										At RiskVille we consider the close relantionship beetween our solution and our
-										clients everyday bussiness..
-									</p>
-								</div>
-								<div class="item-news__link">
-									<a href="">Read more</a>
-								</div>
-							</div>
+						<h3 class="item-news__title">RiskVille release #69</h3>
+						<p class="item-news__info">On June 8, RiskVille deployed release version 2.69</p>
+					</a>
+					<a href="read-more.html" class="page-news__item item-news">
+						<div class="item-news__img" style="background-image: url('img/news.png')">
 						</div>
-					</div>
+						<div class="item-news__date">
+							<span>12 min. read</span> <span>21 Jun 2023</span>
+						</div>
+						<h3 class="item-news__title">RiskVille release #69</h3>
+						<p class="item-news__info">On June 8, RiskVille deployed release version 2.69</p>
+					</a>
+					<a href="read-more.html" class="page-news__item item-news">
+						<div class="item-news__img" style="background-image: url('img/news.png')">
+						</div>
+						<div class="item-news__date">
+							<span>12 min. read</span> <span>21 Jun 2023</span>
+						</div>
+						<h3 class="item-news__title">RiskVille release #69</h3>
+						<p class="item-news__info">On June 8, RiskVille deployed release version 2.69</p>
+					</a>
+					<a href="read-more.html" class="page-news__item item-news">
+						<div class="item-news__img" style="background-image: url('img/news.png')">
+						</div>
+						<div class="item-news__date">
+							<span>12 min. read</span> <span>21 Jun 2023</span>
+						</div>
+						<h3 class="item-news__title">RiskVille release #69</h3>
+						<p class="item-news__info">On June 8, RiskVille deployed release version 2.69</p>
+					</a>
+					<a href="read-more.html" class="page-news__item item-news">
+						<div class="item-news__img" style="background-image: url('img/news.png')">
+						</div>
+						<div class="item-news__date">
+							<span>12 min. read</span> <span>21 Jun 2023</span>
+						</div>
+						<h3 class="item-news__title">RiskVille release #69</h3>
+						<p class="item-news__info">On June 8, RiskVille deployed release version 2.69</p>
+					</a>
 				</div>
 			</div>
 		</main>
-		<footer class="footer-page">
-			<div class="footer-page__container">
-				<div class="footer-page__top ">
-					<div class="footer-page__logo">
-						<a href="">
-							<img src="img/footer-logo.png" alt="">
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__top ">
+					<div class="footer__logo">
+						<a href="" data-goto-header data-goto=".header__full-screen">
+							<img src="img/logo.svg" alt="logo">
 						</a>
 					</div>
-					<div class="footer-page__menu menu-footer">
+					<div class="footer__menu menu-footer">
 						<div class="menu-footer__body">
 							<ul class="menu-footer__list">
 								<li class="menu-footer__item">
-									<a href="index.html#about-page" class="menu-footer__link">About</a>
+									<a data-goto-header data-goto=".about" href="#about" class="menu-footer__link">
+										About
+									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a href="index.html#problem-page" class="menu-footer__link">Problem</a>
+									<a data-goto-header data-goto=".problem" href="#about" class="menu-footer__link">
+										Problem
+									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a href="index.html#solution-page" class="menu-footer__link">Solution</a>
+									<a data-goto-header data-goto=".features" href="" class="menu-footer__link">
+										Solution
+									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a href="index.html#benefits-page" class="menu-footer__link">Benefits</a>
+									<a data-goto-header data-goto=".benefits" href="#benefits" class="menu-footer__link">
+										Benefits
+									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a href="index.html#why-riskVille-page" class="menu-footer__link">Testimonials</a>
+									<a data-goto-header data-goto=".why-riskVille" class="menu-footer__link" href="#why-riskVille">
+										Testimonials
+									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a href="index.html#contacts-page" class="menu-footer__link">Contacts</a>
+									<a data-goto-header data-goto=".contacts" class="menu-footer__link" href="#contacts">
+										Contacts
+									</a>
 								</li>
 								<li class="menu-footer__item">
-									<a href="index.html#news-page" class="menu-footer__link">News</a>
+									<a href="news.html" class="menu-footer__link">
+										News
+									</a>
 								</li>
+							</ul>
+							<ul class="menu-footer__list2">
+								<div class="menu-footer__item2">
+									<a class="menu-footer__link" data-goto-header data-goto=".about" href="">About</a>
+									<a class="menu-footer__link" data-goto-header data-goto=".features" href="">Solution</a>
+									<a class="menu-footer__link" data-goto-header data-goto=".benefits" href="">Benefits</a>
+								</div>
+								<div class="menu-footer__item2">
+									<a class="menu-footer__link" data-goto-header data-goto=".why-riskVille" href="">Testimonials</a>
+									<a class="menu-footer__link" data-goto-header data-goto=".contacts" href="">Contacts</a>
+									<a class="menu-footer__link" href="#news.html">News</a>
+								</div>
 							</ul>
 						</div>
 					</div>
 					<div class="footer-page__button">
-						<a href="index.html#contacts-page" class="footer-page__btn btn-footer">Schedule a Demo</a>
-					</div>
-				</div>
-				<div class="footer-center-line">
-					<div class="footer-center-line__arrow"></div>
-					<div class="footer-center-line__button">
-						<a href="index.html#contacts-page" class="footer-center-line__btn btn-footer">Schedule a
-							Demo</a>
+						<a href="#contacts" data-goto-header data-goto=".contacts" class="footer-page__btn btn-footer">Schedule
+							a Demo</a>
 					</div>
 				</div>
 				<div class="footer-bottom">
 					<div class="footer-bottom__items">
 						<div class="footer-bottom__item item-footer">
-							<div class="footer-page__logo-2">
-								<a href="">
-									<img src="img/footer-logo.png" alt="">
-								</a>
-							</div>
-						</div>
-						<div class="footer-bottom__item item-footer">
 							<div class="item-footer__country">
-								<span>USA</span>
+								<span>RiskVille US</span>
 							</div>
 							<div class="item-footer__email">
-								<span>info@riskville.com</span>
+								<a href="#">info@riskville.com</a>
 							</div>
 							<div class="item-footer__phone">
-								<span>+1 650 425-77-66</span>
+								<a href="tell:+16504257766">+1 650 425-77-66</a>
 							</div>
 							<div class="item-footer__text">
 								<p>
-									Clifton Building 2661 Executive Center Circle US, Tallahassee, FL 32301
+									2285 Club Lake Drive Jacksonville Florida
 								</p>
 							</div>
 						</div>
 						<div class="footer-bottom__item item-footer">
 							<div class="item-footer__country">
-								<span> IRELAND</span>
+								<span> RiskVille Ltd</span>
 							</div>
 							<div class="item-footer__email">
-								<span>info@riskville.com</span>
+								<a href="info@ riskville.com">info@riskville.com</a>
 							</div>
 							<div class="item-footer__phone">
-								<span>+44 7557 344 053</span>
+								<a href="tell:+447557344053">+44 7557 344 053</a>
 							</div>
 							<div class="item-footer__text">
 								<p>
-									Dublin Broadmeadow Hall, Applewood Village, Swords
+									Broadmeadow Hall, Applewood Village, Swords, County Dublin, Ireland
 								</p>
 							</div>
 						</div>
@@ -359,10 +245,10 @@
 								<span>DENMARK</span>
 							</div>
 							<div class="item-footer__email">
-								<span>info@riskville.com</span>
+								<a href="#">info@riskville.com</a>
 							</div>
 							<div class="item-footer__phone">
-								<span>+45 3156 2900</span>
+								<a href="tell:+4531562900">+45 3156 2900</a>
 							</div>
 							<div class="item-footer__text">
 								<p>
@@ -371,28 +257,33 @@
 							</div>
 						</div>
 					</div>
-					<div class="footer-botoom__line"></div>
 					<div class="footer-bottom__map">
-						<img src="img/footer-map.png" alt="">
-					</div>
-					<div class="footer-bottom__map-2">
-						<img src="img/footer-map-2.png" alt="">
+						<img src="img/footer-map.svg" alt="">
 					</div>
 				</div>
 				<div class="footer-social">
 					<div class="footer-social__icon">
-						<a href=""><img src="img/footer-linkedin.svg" alt=""></a>
-						<a href=""><img src="img/footer-facebook.svg" alt=""></a>
-						<a href=""><img src="img/footer-twitter.svg" alt=""></a>
+						<a href=""><img src="img/linkedin.svg" alt=""></a>
+						<a href=""><img src="img/facebook.svg" alt=""></a>
+						<a href=""><img src="img/twitter.svg" alt=""></a>
 					</div>
 					<div class="footer-social__subtitle">
-						<span>© 2020 Lift Media. All rights reserved</span>
+						<h3>© All rights reserved, RiskVille Limited 2023</h3>
+						<div class="footer-social__links">
+							<a href="terms-of-use.html">Terms and Conditions</a>
+							<span>|</span>
+							<a href="privacy-polycy.html">Privacy Policy</a>
+						</div>
 					</div>
 				</div>
 			</div>
+			<div class="footer__dots1" data-prlx-mouse data-prlx-a="20" data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr></div>
+			<div class="footer__dots2"></div>
 		</footer>
+
+
 	</div>
-	<script src="js/app.min.js?_v=20230331173358"></script>
+	<script src="js/app.min.js?_v=20230725085331"></script>
 </body>
 
 </html>
