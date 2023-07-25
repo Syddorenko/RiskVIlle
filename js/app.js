@@ -1,6 +1,19 @@
 (() => {
     "use strict";
     const modules_flsModules = {};
+    function isWebp() {
+        function testWebP(callback) {
+            let webP = new Image;
+            webP.onload = webP.onerror = function() {
+                callback(webP.height == 2);
+            };
+            webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+        }
+        testWebP((function(support) {
+            let className = support === true ? "webp" : "no-webp";
+            document.documentElement.classList.add(className);
+        }));
+    }
     function getHash() {
         if (location.hash) return location.hash.replace("#", "");
     }
@@ -54,11 +67,7 @@
         bodyUnlock();
         document.documentElement.classList.remove("menu-open");
     }
-    function functions_FLS(message) {
-        setTimeout((() => {
-            if (window.FLS) console.log(message);
-        }), 0);
-    }
+    function functions_FLS(message) {}
     function uniqArray(array) {
         return array.filter((function(item, index, self) {
             return self.indexOf(item) === index;
@@ -7230,6 +7239,7 @@
         loader.style.display = "none";
     }));
     window["FLS"] = true;
+    isWebp();
     menuInit();
     formFieldsInit({
         viewPass: false,
